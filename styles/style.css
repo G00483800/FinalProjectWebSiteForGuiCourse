@@ -147,3 +147,66 @@ p {
 .proceed-btn:hover {
     background-color: #203531;
 }
+/* Container Spacing */
+.payment-container {
+    max-width: 450px;
+    margin: 60px auto;
+    padding: 40px;
+    background: #ffffff;
+    border: 1px solid #e1e8ed;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+/* Order Summary Detail */
+.order-box {
+    background-color: #f3faf6;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #109b84;
+    margin-bottom: 30px;
+}
+
+.order-box p {
+    margin: 4px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Side-by-side Layout */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+/* Visual Validation Details */
+input:required:focus:invalid {
+    border-color: #ffb3b3; /* Soft red if pattern is not met */
+}
+
+input:required:focus:valid {
+    border-color: #109b84; /* EcoGlow green if correct */
+}
+
+/* The Button */
+.pay-btn {
+    width: 100%;
+    background-color: #109b84;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.2s ease;
+}
+
+.pay-btn:hover {
+    background-color: #0d7e6b;
+    box-shadow: 0 5px 15px rgba(16, 155, 132, 0.3);
+}
+
+.pay-btn:active {
+    transform: scale(0.97); /* Mimics a real button click */
+}

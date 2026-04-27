@@ -31,46 +31,34 @@
         <div class="credit-card-section">
     <h3>Card Details</h3>
     
-    <form id="payment-form">
+    <form action="success.html"> <div class="form-group">
+        <label for="card-number">Card Number</label>
+        <input type="text" id="card-number" 
+               pattern="\d{16}" 
+               title="Please enter a 16-digit card number" 
+               placeholder="1234123412341234" required>
+    </div>
+
+    <div class="form-row">
         <div class="form-group">
-            <label for="card-type">Card Type</label>
-            <select id="card-type" required>
-                <option value="">--Select Card--</option>
-                <option value="visa">Visa</option>
-                <option value="mastercard">MasterCard</option>
-                <option value="amex">American Express</option>
-            </select>
+            <label for="expiry">Expiry Date</label>
+            <input type="text" id="expiry" 
+                   pattern="(0[1-9]|1[0-2])\/([0-9]{2})" 
+                   title="Format: MM/YY" 
+                   placeholder="MM/YY" required>
         </div>
-
+        
         <div class="form-group">
-            <label for="card-name">Name on Card</label>
-            <input type="text" id="card-name" placeholder="Full Name" required>
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" 
+                   pattern="\d{3}" 
+                   title="3 digits on back of card" 
+                   placeholder="123" required>
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="card-number">Card Number</label>
-            <input type="tel" id="card-number" placeholder="1234 5678 9101 1121" 
-                   pattern="[0-9]{13,16}" maxlength="16" required>
-        </div>
-
-        <div class="form-row" >
-            <div class="form-group" >
-                <label for="expiry">Expiry Date</label>
-                <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="cvv">CVV</label>
-                <input type="tel" id="cvv" placeholder="123" maxlength="3" required>
-            </div>
-        </div>
-
-        <button type="button" onclick="processPayment()" class="pay-btn">
-            <!---Here is the function of validation and maybe add alert to the button like approvement of the payment 
-            !!!IMPORTANT if the user in delivery choosed express delivery you need to check it and if it is true just add 10 to a total!!!
-            -->
-        </button>
-    </form>
+    <button type="submit" class="pay-btn">Confirm & Pay Now</button>
+</form>
 </div>
 
     </main>
