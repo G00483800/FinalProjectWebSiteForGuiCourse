@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css">
+<div class="header">
+    <div class="logo-section">
+        <a href="index.html">
+            <img src="logo.png" alt="EcoGlow Logo" style="height: 40px;">
+        </a>
+        <h1>EcoGlow</h1>
+    </div>
+    <div class="nav-links">
+        <a class="headerlink" href="delivery.html">Delivery</a>
+        <a class="headerlink" href="cart.html">Cart</a>
+    </div>
+</div>
+</head>
+<body>
+    <body>
+    <main class="payment-container">
+        <h2>Finalize Payment</h2>
+        
+        <div class="order-box">
+            <p>Order Total: <strong>$<span id="payment-total">0.00</span></strong></p>
+            <p>Items: <span id="item-count">0</span></p>
+        </div>
+
+        <div class="credit-card-section">
+    <h3>Card Details</h3>
+    
+    <form id="payment-form">
+        <div class="form-group">
+            <label for="card-type">Card Type</label>
+            <select id="card-type" required>
+                <option value="">--Select Card--</option>
+                <option value="visa">Visa</option>
+                <option value="mastercard">MasterCard</option>
+                <option value="amex">American Express</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="card-name">Name on Card</label>
+            <input type="text" id="card-name" placeholder="Full Name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="card-number">Card Number</label>
+            <input type="tel" id="card-number" placeholder="1234 5678 9101 1121" 
+                   pattern="[0-9]{13,16}" maxlength="16" required>
+        </div>
+
+        <div class="form-row" >
+            <div class="form-group" >
+                <label for="expiry">Expiry Date</label>
+                <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="tel" id="cvv" placeholder="123" maxlength="3" required>
+            </div>
+        </div>
+
+        <button type="button" onclick="processPayment()" class="pay-btn">
+            <!---Here is the function of validation and maybe add alert to the button like approvement of the payment-->>
+        </button>
+    </form>
+</div>
+
+    </main>
+    <!---Here is must be simple validation of details and make sure that all prices added correctly js goes here-->
+</body>
+</body>
+</html>
