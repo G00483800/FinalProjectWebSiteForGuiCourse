@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Order Success - GlowShop</title>
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
+
+<div class="header">
+    <div class="logo-section">
+        <a href="index.html">
+            <img src="/static/logo.png" alt="GlowShop Logo" style="height: 40px;">
+        </a>
+        <h1>GlowShop</h1>
+    </div>
+    <div class="nav-links">
+        <a class="headerlink" href="delivery.html">Delivery</a>
+        <a class="headerlink" href="cart.html">Cart</a>
+    </div>
+</div>
+
+<main class="success-container" style="text-align: center; padding: 50px;">
     
+    <h2>Payment Successful!</h2>
+    <p>Thank you for shopping with <strong>GlowShop</strong>.</p>
+    
+    <div class="order-details" style="margin: 20px 0; padding: 20px; border: 1px dashed #ccc;">
+        <p>Order Number: <span id="order-id">#GS-77210</span></p>
+
+    </div>
+
+    <p>A confirmation email has been sent to your inbox.</p>
+
+    <br>
+    <a href="index.html" class="back-home-btn" style="text-decoration: none; padding: 10px 20px; background-color: #2D5A27; color: white; border-radius: 5px;">
+        Continue Shopping
+    </a>
+</main>
+
+<script>
+    // Since the payment is finished, we wipe the cart from memory
+    localStorage.removeItem('myCart');
+    
+    // Optional: Generate a random order number to make it look real
+    const randomOrder = "GS-" + Math.floor(Math.random() * 100000);
+    document.getElementById('order-id').innerText = "#" + randomOrder;
+</script>
+
 </body>
 </html>
