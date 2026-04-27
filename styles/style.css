@@ -87,3 +87,63 @@ p {
 .add-to-cart:active {
     transform: scale(0.98);    /* Slight "press" effect */
 }
+.delivery-container {
+    max-width: 500px;
+    margin: 50px auto; /* Centers the form and adds space from the header */
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.delivery-container h2 {
+    color: #109b84;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group input, .form-group select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #109b84; /* Highlight input when typing */
+    outline: none;
+}
+
+/* Styled Proceed Button */
+.proceed-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #109b84;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.proceed-btn:hover {
+    background-color: #203531;
+}
