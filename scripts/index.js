@@ -9,6 +9,8 @@ function addToCart1(){
 
     const total = parseInt(sessionStorage.getItem("Boots"), 10) || 0;
     sessionStorage.setItem("Boots", total + price * amount);
+    const total1 = parseInt(sessionStorage.getItem("Boots"), 10) || 0;
+    sessionStorage.setItem("ItemsAmount1", total1/price || 0);
 }
 function addToCart2(){
     const priceElement = document.getElementsByClassName("price2")[0];
@@ -21,6 +23,8 @@ function addToCart2(){
 
     const total = parseInt(sessionStorage.getItem("Earbuds"), 10) || 0;
     sessionStorage.setItem("Earbuds", total + price * amount);
+    const total2 = parseInt(sessionStorage.getItem("Earbuds"), 10) || 0;
+    sessionStorage.setItem("ItemsAmount2", total2/price || 0);
 }
 function addToCart3(){
     const priceElement = document.getElementsByClassName("price3")[0];
@@ -33,4 +37,14 @@ function addToCart3(){
 
     const total = parseInt(sessionStorage.getItem("Headphones"), 10) || 0;
     sessionStorage.setItem("Headphones", total + price * amount);
+    const total3 = parseInt(sessionStorage.getItem("Headphones"), 10) || 0;
+    sessionStorage.setItem("ItemsAmount3", total3/price || 0);
 }
+function calculateTotal() {
+    let total = 0;
+    total += parseInt(sessionStorage.getItem("Boots"), 10) || 0;
+    total += parseInt(sessionStorage.getItem("Earbuds"), 10) || 0;
+    total += parseInt(sessionStorage.getItem("Headphones"), 10) || 0;
+    sessionStorage.setItem("Total", total);
+}
+calculateTotal();
