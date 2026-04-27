@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
+    <title>Cart - EcoGlow</title>
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-    
+
+<div class="header">
+    <div class="logo-section">
+        <a href="index.html">
+            <img src="logo.png" alt="EcoGlow Logo" style="height: 40px;">
+        </a>
+        <h1>EcoGlow</h1>
+    </div>
+    <div class="nav-links">
+        <a class="headerlink" href="delivery.html">Delivery</a>
+        <a class="headerlink" href="cart.html">Cart</a>
+    </div>
+</div>
+
+<main class="cart-page">
+    <h2>Items in your Cart</h2>
+
+    <div id="cart-list">
+        <p>Your cart is currently empty.</p>
+    </div>
+
+    <div class="cart-summary">
+        <hr>
+        <h3>Total: $<span id="total-price">0</span></h3>
+        
+        <button onclick="window.location.href='delivery.html'" class="checkout-btn">
+            Proceed to Delivery
+        </button>
+        
+        <br>
+        <a href="index.html">Back to Shop</a>
+    </div>
+</main>
 </body>
 </html>
