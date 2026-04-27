@@ -30,3 +30,60 @@
     color: #333;
     font-weight: 500;
 }
+.productContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+.product-card {
+    background-color: #f3faf6;
+    border: 1px solid #4f83f5; /* Thinner, more defined border */
+    border-radius: 12px;       /* Rounds the corners for a modern look */
+    box-shadow: 0 10px 30px rgba(128, 0, 128, 0.2); /* Softer, deep shadow */
+    width: 200px;
+    padding: 20px;            /* Increased padding for "breathability" */
+    text-align: center;
+ box-shadow: #4f83f5;
+    transition: transform 0.2s; /* Subtle hover effect */
+}
+h3 {
+    color: #109b84;
+    font-size: 18px;
+    font-weight: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20px;
+    font-style:oblique;
+}
+p {
+    color: #000000;
+     font-size: 18px;
+    font-weight: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20px;
+    font-style:oblique
+}
+.add-to-cart {
+    background-color: #5f706d; /* Matches your h3 color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;    /* Changes mouse to a hand icon */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;        /* Makes the button fill the card width */
+}
+
+/* Hover-only effect for the button */
+.add-to-cart:hover {
+    background-color: #0d7e6b; /* Slightly darker shade on hover */
+    transform: scale(1.05);    /* Makes the button grow slightly */
+}
+
+/* Active effect for when the button is actually clicked */
+.add-to-cart:active {
+    transform: scale(0.98);    /* Slight "press" effect */
+}
