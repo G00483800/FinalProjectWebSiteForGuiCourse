@@ -37,6 +37,12 @@
     justify-content: center;
     padding: 20px;
 }
+
+img {
+    width: 150px;
+    height: auto;
+}
+
 .product-card {
     background-color: #f3faf6;
     border: 1px solid #000000; /* Thinner, more defined border */

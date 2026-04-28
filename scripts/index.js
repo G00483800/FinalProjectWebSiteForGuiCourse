@@ -7,9 +7,9 @@ function addToCart1(){
     const amount = parseInt(amountElement.value, 10) || 0;
     if (amount <= 0) return;
 
-    const total = parseInt(sessionStorage.getItem("Boots"), 10) || 0;
-    sessionStorage.setItem("Boots", total + price * amount);
-    const total1 = parseInt(sessionStorage.getItem("Boots"), 10) || 0;
+    const total = parseInt(sessionStorage.getItem("Stone island"), 10) || 0;
+    sessionStorage.setItem("Stone island", total + price * amount);
+    const total1 = parseInt(sessionStorage.getItem("Stone island"), 10) || 0;
     sessionStorage.setItem("ItemsAmount1", total1/price || 0);
 }
 function addToCart2(){
@@ -21,9 +21,9 @@ function addToCart2(){
     const amount = parseInt(amountElement.value, 10) || 0;
     if (amount <= 0) return;
 
-    const total = parseInt(sessionStorage.getItem("Earbuds"), 10) || 0;
-    sessionStorage.setItem("Earbuds", total + price * amount);
-    const total2 = parseInt(sessionStorage.getItem("Earbuds"), 10) || 0;
+    const total = parseInt(sessionStorage.getItem("Balenciaga Pants"), 10) || 0;
+    sessionStorage.setItem("Balenciaga Pants", total + price * amount);
+    const total2 = parseInt(sessionStorage.getItem("Balenciaga Pants"), 10) || 0;
     sessionStorage.setItem("ItemsAmount2", total2/price || 0);
 }
 function addToCart3(){
@@ -35,9 +35,9 @@ function addToCart3(){
     const amount = parseInt(amountElement.value, 10) || 0;
     if (amount <= 0) return;
 
-    const total = parseInt(sessionStorage.getItem("Headphones"), 10) || 0;
-    sessionStorage.setItem("Headphones", total + price * amount);
-    const total3 = parseInt(sessionStorage.getItem("Headphones"), 10) || 0;
+    const total = parseInt(sessionStorage.getItem("OFF-WHITE Shoes"), 10) || 0;
+    sessionStorage.setItem("OFF-WHITE Shoes", total + price * amount);
+    const total3 = parseInt(sessionStorage.getItem("OFF-WHITE Shoes"), 10) || 0;
     sessionStorage.setItem("ItemsAmount3", total3/price || 0);
 }
 function calculateTotal() {
