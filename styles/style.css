@@ -10,6 +10,7 @@
 }
 
 .logo-section {
+    
     display: flex;
     align-items: center;
     gap: 15px; /* Adds space between the logo image and the text */
@@ -42,6 +43,7 @@
     width: 150px;
     height: auto;
 }
+
 
 .product-card {
     background-color: #f3faf6;
@@ -320,4 +322,27 @@ input:required:focus:valid {
 }
 .back-btn:hover {
     background-color: #109b84;
+}
+body {
+    /* 1. Create a large gradient */
+    background: linear-gradient(-45deg, #23a6d5, #ff49d1b2, #03ff81, #039271);
+    background-size: 400% 400%;
+    
+    /* 2. Apply the animation */
+    animation: gradientAnimation 10s ease infinite;
+    
+    height: 100vh;
+}
+
+/* 3. Define the movement */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
