@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="/styles/style.css">
 <div class="header">
     <div class="logo-section">
-        <a href="index.html">
+        <a href="index.html" onclick="shippingCost()">
             <img src="/static/logo.png" alt="GlowShop Logo" style="height: 40px;">
         </a>
 
     </div>
     <div class="nav-links">
-        <a class="headerlink" href="delivery.html">Delivery</a>
-        <a class="headerlink" href="cart.html">Cart</a>
+        <a class="headerlink" href="delivery.html" onclick="shippingCost()">Delivery</a>
+        <a class="headerlink" href="cart.html" onclick="shippingCost()">Cart</a>
     </div>
 </div>
 </head>
@@ -24,7 +24,7 @@
         <h2>Finalize Payment</h2>
         
         <div class="order-box">
-            <p>Order Total: <strong>$<span id="payment-total">0.00</span></strong></p>
+            <p>Order Total: <strong>€<span id="payment-total">1.00</span></strong></p>
             <p>Items: <span id="item-count">0</span></p>
         </div>
 
@@ -61,8 +61,8 @@
 </form>
 </div>
 
-    </main>
+</main>
+<script src="../scripts/payment.js"></script>
     <!---Here is must be simple validation of details and make sure that all prices added correctly js goes here-->
-</body>
 </body>
 </html>
