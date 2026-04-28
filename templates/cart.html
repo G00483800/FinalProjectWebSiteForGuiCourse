@@ -21,26 +21,24 @@
 </div>
 
 <main class="cart-page">
-    <h2>Items in your Cart</h2>
+    <div class="cart-container">
+        <h2>Items in your Cart</h2>
 
-    <div>
-        <ul id="cart-items">
-           
-        </ul>
-    </div>
+        <ul id="cart-items"></ul>
 
-    <div class="cart-summary">
-        <hr>
-        <h3>Total: $<span id="total-price">0</span></h3>
-        
-        <button onclick="window.location.href='delivery.html'" class="checkout-btn">
-            Proceed to Delivery
-        </button>
-        
-        <br>
-        <button class="back-btn"><a href="index.html">Back to Shop</a></button>
+        <div class="cart-summary">
+            <hr>
+            <h3>Total: $<span id="total-price">0</span></h3>
+
+            <button onclick="window.location.href='delivery.html'" class="checkout-btn">
+                Proceed to Delivery
+            </button>
+
+            <button class="back-btn">
+                <a href="index.html">Back to Shop</a>
+            </button>
+        </div>
     </div>
-    <!--The main task here it is to calculate the total value of the products in the cart using js-->
 </main>
 <script src="../scripts/cart.js"></script>
 </body>
