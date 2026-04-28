@@ -20,3 +20,25 @@ function itemCount(){
     itemCount += parseInt(sessionStorage.getItem("ItemsAmount3"), 10) || 0;
     document.getElementById("item-count").textContent = itemCount;
 }itemCount();
+function confirmation(){
+    let cardNumber = document.getElementById("card-number").value.trim();
+    let expiryDate = document.getElementById("expiry").value.trim();
+    let cvv = document.getElementById("cvv").value.trim();
+
+    if (cardNumber.length !== 16){
+        alert("Please enter a valid card number.");
+        return;
+    }
+    if (expiryDate.length !== 5){
+        alert("Please enter a valid expiry date.");
+        return;
+    }
+    if (cvv.length !== 3){
+        alert("Please enter a valid CVV.");
+        return;
+    }
+
+
+    window.location.href = "success.html";
+    sessionStorage.clear();
+}
