@@ -1,117 +1,121 @@
+/* --- 1. Global Reset & Body --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #23a6d5, #ff49d1b2, #03ff81, #039271);
+    background-size: 400% 400%;
+    animation: gradientAnimation 18.88s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- 2. Header & Navigation --- */
 .header {
-    background-color: #f6fbff;
-    padding: 10px 40px; /* Vertical and horizontal padding */
-    border-bottom: 1px solid #dee2e6;
-    
-    /* Flexbox settings */
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
     display: flex; 
-    justify-content: space-between; /* Pushes groups to far left and far right */
-    align-items: center; /* Vertically centers everything */
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 5%;
+    border-bottom: 2px solid #109b84;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo-section {
-    
     display: flex;
     align-items: center;
-    gap: 15px; /* Adds space between the logo image and the text */
+    gap: 15px;
 }
 
-.logo-section h1 {
-    margin: 0;
-    font-size: 24px;
+.logo-section img {
+    height: 60px;
+    width: auto;
 }
 
 .nav-links {
     display: flex;
-    gap: 20px; /* Space between Delivery and Cart */
+    gap: 25px;
 }
 
 .headerlink {
     text-decoration: none;
     color: #333;
-    font-weight: 500;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
 }
+
+.headerlink:hover {
+    color: #109b84;
+}
+
+/* --- 3. Shop / Product Grid --- */
 .productContainer {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
-    padding: 20px;
+    padding: 40px 20px;
 }
-
-.item-img {
-    width: 150px;
-    height: auto;
-}
-
 
 .product-card {
     background-color: #f3faf6;
-    border: 1px solid #000000; /* Thinner, more defined border */
-    border-radius: 12px;       /* Rounds the corners for a modern look */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Softer, deep shadow */
-    width: 200px;
-    padding: 20px;            /* Increased padding for "breathability" */
+    border: 1px solid #109b84;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 240px;
+    padding: 25px;
     text-align: center;
- box-shadow: #4f83f5;
-    transition: transform 0.2s; /* Subtle hover effect */
+    transition: transform 0.3s ease;
 }
-h3 {
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.item-img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+h3, p {
     color: #109b84;
-    font-size: 18px;
-    font-weight: 30px;
-    font-family: 'Courier New', Courier, monospace;
-    margin-bottom: 20px;
-    font-style:oblique;
+    font-style: oblique;
+    margin-bottom: 15px;
 }
+
 p {
-    color: #000000;
-     font-size: 18px;
-    font-weight: 30px;
-    font-family: 'Courier New', Courier, monospace;
-    margin-bottom: 20px;
-    font-style:oblique
-}
-.add-to-cart {
-    background-color: #5f706d; /* Matches your h3 color */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-family: 'Courier New', Courier, monospace;
+    color: #333;
     font-weight: bold;
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer;    /* Changes mouse to a hand icon */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 100%;        /* Makes the button fill the card width */
 }
 
-/* Hover-only effect for the button */
-.add-to-cart:hover {
-    background-color: #0d7e6b; /* Slightly darker shade on hover */
-    transform: scale(1.05);    /* Makes the button grow slightly */
-}
-
-/* Active effect for when the button is actually clicked */
-.add-to-cart:active {
-    transform: scale(0.98);    /* Slight "press" effect */
-}
-.delivery-container {
-    max-width: 500px;
-    margin: 50px auto; /* Centers the form and adds space from the header */
-    padding: 30px;
+/* --- 4. Containers (Cart, Delivery, Payment, Success) --- */
+.delivery-container, .payment-container, .cart-page, .success-container {
+    max-width: 550px;
+    margin: 60px auto;
+    padding: 40px;
     background-color: #ffffff;
-    border: 1px solid #dee2e6;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
-.delivery-container h2 {
-    color: #109b84;
-    font-family: 'Courier New', Courier, monospace;
-    margin-bottom: 25px;
-    text-align: center;
-}
+.cart-page { max-width: 800px; }
 
+/* --- 5. Forms & Inputs --- */
 .form-group {
     margin-bottom: 20px;
     display: flex;
@@ -121,228 +125,106 @@ p {
 
 .form-group label {
     font-weight: bold;
-    font-size: 14px;
     color: #333;
 }
 
-.form-group input, .form-group select {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s;
-}
-
-.form-group input:focus {
-    border-color: #109b84; /* Highlight input when typing */
-    outline: none;
-}
-
-/* Styled Proceed Button */
-.proceed-btn {
-    width: 100%;
-    padding: 15px;
-    background-color: #109b84;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.proceed-btn:hover {
-    background-color: #203531;
-}
-/* Container Spacing */
-.payment-container {
-    max-width: 450px;
-    margin: 60px auto;
-    padding: 40px;
-    background: #ffffff;
-    border: 1px solid #e1e8ed;
-    border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-}
-
-/* Order Summary Detail */
-.order-box {
-    background-color: #f3faf6;
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 4px solid #109b84;
-    margin-bottom: 30px;
-}
-
-.order-box p {
-    margin: 4px 0;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-/* Side-by-side Layout */
-.form-row {
-    display: flex;
-    gap: 15px;
-}
-
-/* Visual Validation Details */
-input:required:focus:invalid {
-    border-color: #ffb3b3; /* Soft red if pattern is not met */
-}
-
-input:required:focus:valid {
-    border-color: #109b84; /* EcoGlow green if correct */
-}
-
-/* The Button */
-.pay-btn {
-    width: 100%;
-    background-color: #109b84;
-    color: white;
-    padding: 16px;
-    border: none;
+input, select {
+    padding: 12px; /* Added padding back for better UX */
+    border: 2px solid #eee;
     border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: all 0.2s ease;
-}
-
-.pay-btn:hover {
-    background-color: #0d7e6b;
-    box-shadow: 0 5px 15px rgba(16, 155, 132, 0.3);
-}
-
-.pay-btn:active {
-    transform: scale(0.97); /* Mimics a real button click */
-}
-/* --- Global & Header (Your Original Styles) --- */
-.header {
-    background-color: #f6fbff;
-    padding: 10px 40px;
-    border-bottom: 1px solid #dee2e6;
-    display: flex; 
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-links { display: flex; gap: 20px; }
-.headerlink { text-decoration: none; color: #333; font-weight: 500; }
-
-/* --- Cart Page Layout --- */
-/* --- Cart Page Layout --- */
-.cart-page {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
     font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    transition: all 0.3s;
 }
 
-.cart-page h2 {
-    color: #109b84;
+input:focus {
+    border-color: #109b84;
+    outline: none;
+    background-color: #f3faf6;
+}
+
+/* --- 6. Buttons (The "EcoGlow" Look) --- */
+.add-to-cart, .pay-btn, .proceed-btn, .checkout-btn, .back-btn {
+    display: inline-block;
+    width: 100%;
+    background-color: #109b84;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
     text-align: center;
-    margin-bottom: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-/* --- Cart Items --- */
-#cart-items {
-    list-style: none;
-    padding: 0;
+.add-to-cart:hover, .pay-btn:hover, .proceed-btn:hover, .checkout-btn:hover {
+    background-color: #0d7e6b;
+    box-shadow: 0 5px 15px rgba(16, 155, 132, 0.4);
+    transform: scale(1.02);
 }
 
-.cart-item {
+.back-btn {
+    background-color: #5f706d;
+    margin-top: 15px;
+}
+
+.back-btn:hover {
+    background-color: #444;
+}
+
+/* --- 7. Cart & Order Details --- */
+.cart-item, .order-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 25px;
+    padding: 15px;
     background-color: #f3faf6;
-    border: 1px solid #4f83f5;
-    border-radius: 12px;
+    border-left: 5px solid #109b84;
+    border-radius: 8px;
     margin-bottom: 15px;
 }
 
-/* --- Summary & Buttons --- */
-.cart-summary {
+/* --- 8. Success Page Specific Styles --- */
+.success-container {
     text-align: center;
-    margin-top: 40px;
-    padding: 20px;
 }
 
-.total-section h3 {
+.success-icon {
+    font-size: 60px;
     color: #109b84;
-    font-size: 24px;
-    font-style: oblique;
     margin-bottom: 20px;
+    display: inline-block;
+    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Shared Button Styles */
-.checkout-btn, .back-btn {
-    background-color: #109b84;
-    color: white;
-    border: none;
-    padding: 15px 40px;
-    font-family: 'Courier New', Courier, monospace;
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.order-details-box {
+    background-color: #f3faf6;
+    border: 2px dashed #109b84;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 12px;
+}
+
+.order-details-box label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.order-details-box span {
+    font-size: 1.5rem;
     font-weight: bold;
-    font-size: 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.2s, background 0.3s;
-    width: 100%;
-    max-width: 300px;
-}
-
-/* Hover Effects */
-.checkout-btn:hover, .back-btn:hover {
-    background-color: #0d7e6b;
-    transform: scale(1.03);
-}
-
-.back-container {
-    margin-top: 20px;
-}
-
-/* Optional: Make the back button slightly different so it doesn't compete with Checkout */
-.back-btn {
-    padding: 0; /* Remove padding from the button itself */
-    overflow: hidden; /* Ensures the link doesn't spill out of rounded corners */
-    margin: 18px;
-    width: 200px;
-}
-.back-btn a {
-    /* This makes the link fill the whole button */
-    display: block; 
-    width: 100%;
-    height: 100%;
-    padding: 15px 40px; 
-    color: white; 
-    text-decoration: none;
-    box-sizing: border-box; /* Includes padding in the width calculation */
-}
-.back-btn:hover {
-    background-color: #109b84;
-}
-body {
-    /* 1. Create a large gradient */
-    background: linear-gradient(-45deg, #23a6d5, #ff49d1b2, #03ff81, #039271);
-    background-size: 400% 400%;
-    
-    /* 2. Apply the animation */
-    animation: gradientAnimation 18.88s ease infinite;
-    
-    height: 100vh;
-}
-
-/* 3. Define the movement */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    color: #109b84;
 }
