@@ -329,7 +329,7 @@ body {
     background-size: 400% 400%;
     
     /* 2. Apply the animation */
-    animation: gradientAnimation 10s ease infinite;
+    animation: gradientAnimation 18.88s ease infinite;
     
     height: 100vh;
 }
