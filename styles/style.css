@@ -1,4 +1,6 @@
-/* --- 1. Global Reset & Body --- */
+/* ==========================================================================
+   1. GLOBAL SETTINGS & ANIMATIONS
+   ========================================================================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,15 +13,23 @@ body {
     background: linear-gradient(-45deg, #23a6d5, #ff49d1b2, #03ff81, #039271);
     background-size: 400% 400%;
     animation: gradientAnimation 18.88s ease infinite;
+    color: #333;
 }
 
 @keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* --- 2. Header & Navigation --- */
+@keyframes popIn {
+    0%   { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* ==========================================================================
+   2. NAVIGATION HEADER
+   ========================================================================== */
 .header {
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(5px);
@@ -54,20 +64,23 @@ body {
     color: #333;
     font-weight: bold;
     font-size: 1.1rem;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .headerlink:hover {
     color: #109b84;
 }
 
-/* --- 3. Shop / Product Grid --- */
+/* ==========================================================================
+   3. PRODUCT GRID & CARDS
+   ========================================================================== */
 .productContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
     padding: 40px 20px;
+    
 }
 
 .product-card {
@@ -75,10 +88,11 @@ body {
     border: 1px solid #109b84;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    width: 240px;
+    width: 300px;
     padding: 25px;
     text-align: center;
     transition: transform 0.3s ease;
+
 }
 
 .product-card:hover {
@@ -92,19 +106,26 @@ body {
     margin-bottom: 15px;
 }
 
-h3, p {
+/* Typography for cards */
+h3, .card-price {
     color: #109b84;
     font-style: oblique;
     margin-bottom: 15px;
 }
 
-p {
-    color: #333;
+.card-price {
+    display: block; /* Ensure the <p> acts correctly */
     font-weight: bold;
 }
 
-/* --- 4. Containers (Cart, Delivery, Payment, Success) --- */
-.delivery-container, .payment-container, .cart-page, .success-container {
+/* ==========================================================================
+   4. LAYOUT CONTAINERS & FORMS
+   ========================================================================== */
+/* Consolidated all main page containers */
+.delivery-container, 
+.payment-container, 
+.cart-page, 
+.success-container {
     max-width: 550px;
     margin: 60px auto;
     padding: 40px;
@@ -113,40 +134,47 @@ p {
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
-.cart-page { max-width: 800px; }
+.cart-page { 
+    max-width: 800px; 
+}
 
-/* --- 5. Forms & Inputs --- */
 .form-group {
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    text-align: left;
 }
 
 .form-group label {
     font-weight: bold;
-    color: #333;
 }
 
 input, select {
-    padding: 12px; /* Added padding back for better UX */
+    padding: 12px;
     border: 2px solid #eee;
     border-radius: 8px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1rem;
-    transition: all 0.3s;
+    width: 100%; /* Ensures consistency across pages */
+    transition: all 0.3s ease;
+    margin: 5px;
+
 }
 
-input:focus {
+input:focus, select:focus {
     border-color: #109b84;
     outline: none;
     background-color: #f3faf6;
 }
 
-/* --- 6. Buttons (The "EcoGlow" Look) --- */
+/* ==========================================================================
+   5. BUTTONS
+   ========================================================================== */
 .add-to-cart, .pay-btn, .proceed-btn, .checkout-btn, .back-btn {
-    display: inline-block;
+    display: block;
     width: 100%;
+    margin: 5px;
     background-color: #109b84;
     color: white;
     border: none;
@@ -161,12 +189,14 @@ input:focus {
     transition: all 0.3s ease;
 }
 
+/* Hover effects for primary buttons */
 .add-to-cart:hover, .pay-btn:hover, .proceed-btn:hover, .checkout-btn:hover {
     background-color: #0d7e6b;
     box-shadow: 0 5px 15px rgba(16, 155, 132, 0.4);
     transform: scale(1.02);
 }
 
+/* Specific styling for secondary 'back' button */
 .back-btn {
     background-color: #5f706d;
     margin-top: 15px;
@@ -176,7 +206,9 @@ input:focus {
     background-color: #444;
 }
 
-/* --- 7. Cart & Order Details --- */
+/* ==========================================================================
+   6. INTERNALS (Cart Items & Success Details)
+   ========================================================================== */
 .cart-item, .order-box {
     display: flex;
     justify-content: space-between;
@@ -188,11 +220,6 @@ input:focus {
     margin-bottom: 15px;
 }
 
-/* --- 8. Success Page Specific Styles --- */
-.success-container {
-    text-align: center;
-}
-
 .success-icon {
     font-size: 60px;
     color: #109b84;
@@ -201,17 +228,13 @@ input:focus {
     animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-@keyframes popIn {
-    0% { transform: scale(0); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
 .order-details-box {
     background-color: #f3faf6;
     border: 2px dashed #109b84;
     padding: 25px;
     margin: 25px 0;
     border-radius: 12px;
+    text-align: center;
 }
 
 .order-details-box label {
